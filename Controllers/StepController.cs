@@ -11,7 +11,7 @@ namespace GridMachine.Controllers
     {
         // PUT api/step
         [HttpPut]
-        public void Put([FromBody] int steps)
+        public IActionResult Put([FromBody] int steps)
         {
             Grid grid = new Grid();
             Machine machine = new Machine(grid.GetCell(0, 0));
@@ -24,7 +24,8 @@ namespace GridMachine.Controllers
             }
 
             writer.Write(grid.ToList());
-            GC.Collect();
+
+            return StatusCode(201);
         }
     }
 }

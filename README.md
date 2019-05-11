@@ -44,6 +44,10 @@ The file will be outputted in the "output" directory.
 
 ![](readme-files/usage.png)
 
+Sample result for 60000 steps:
+
+![](readme-files/sample.png)
+
 ### Possible improvements
 
 * Add Windows installation documentation

@@ -18,7 +18,7 @@ namespace GridMachine.Services
             {
                 using (StreamWriter streamWriter = new StreamWriter(fileStream))
                 {
-                    streamWriter.WriteLine("<html><body><table>");
+                    streamWriter.WriteLine("<html><body><table style='border-collapse: collapse;border: 1px solid black;'>");
 
                     foreach (IEnumerable<bool> row in grid)
                     {
@@ -28,11 +28,11 @@ namespace GridMachine.Services
                         {
                             if (isBlack)
                             {
-                                streamWriter.WriteLine("<td style='background-color:black'>&nbsp;&nbsp;&nbsp;&nbsp;");
+                                streamWriter.WriteLine("<td style='background-color:black;border: 1px solid black;'>&nbsp;&nbsp;&nbsp;&nbsp;");
                             }
                             else
                             {
-                                streamWriter.WriteLine("<td style='background-color:lightgrey'>&nbsp;&nbsp;&nbsp;&nbsp;");
+                                streamWriter.WriteLine("<td style='background-color:white;border: 1px solid black;'>&nbsp;&nbsp;&nbsp;&nbsp;");
                             }
 
                             streamWriter.WriteLine("</td>");

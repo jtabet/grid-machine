@@ -6,13 +6,15 @@ namespace GridMachine.Services
 {
     public class HtmlWriter : Writer
     {
+        private readonly string OutputDirectory = "./output";
+
         /// <summary>
         /// Writes a grid into an html file
         /// </summary>
         /// <param name="grid"></param>
         public void Write(IEnumerable<IEnumerable<bool>> grid)
         {
-            using (FileStream fileStream = new FileStream(string.Format(@"{0}.html", Guid.NewGuid()), FileMode.Create))
+            using (FileStream fileStream = new FileStream(string.Format(@"{0}/{1}.html", OutputDirectory, Guid.NewGuid()), FileMode.Create))
             {
                 using (StreamWriter streamWriter = new StreamWriter(fileStream))
                 {

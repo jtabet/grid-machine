@@ -1,0 +1,12 @@
+version: '3'
+services:
+  webserver:
+    build:
+      args:
+        ASPNETCORE_ENVIRONMENT: 'Development'
+      context: .
+      dockerfile: ./webserver.dockerfile
+    ports:
+      - '8080:80'
+    volumes:
+      - './output:/app/output'
